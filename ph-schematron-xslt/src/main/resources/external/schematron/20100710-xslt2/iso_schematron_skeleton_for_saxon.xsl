@@ -662,31 +662,40 @@ which require a preprocess.
   <xsl:text>&#10;&#10;</xsl:text><xsl:comment>XSD TYPES FOR XSLT2</xsl:comment><xsl:text>&#10;</xsl:text>
 	<xsl:apply-templates mode="do-types"   select="xsl:import-schema"/>
   <xsl:text>&#10;&#10;</xsl:text>
-	<axsl:function name="f:get-valor-num" as="xsd:decimal">
-	<axsl:param name="elemento" as="node()*" />
-	<axsl:param name="defecto" as="xs:decimal" />
-	<axsl:choose>
-		<axsl:when test="$elemento">
-		<axsl:value-of select="$elemento" />
-		</axsl:when>
-		<axsl:otherwise>
-		<axsl:value-of select="$defecto" />
-		</axsl:otherwise>
-	</axsl:choose>
+	
+	<axsl:function name="f:comoNumero" as="xs:decimal">
+		<axsl:param name="valores" as="item()*"/>
+		<axsl:param name="defecto" as="xs:decimal"/>
+
+		<axsl:sequence select="
+			if (empty($valores))
+			then $defecto
+			else sum(
+				for $v in $valores
+				return
+					if (normalize-space(string($v)) castable as xs:decimal)
+					then xs:decimal(normalize-space(string($v)))
+					else 0
+			)
+		"/>
 	</axsl:function>
-	
+
+	<xsl:text>&#10;</xsl:text>
+
 	<axsl:function name="f:redondeaImporte" as="xsd:decimal">
-	<axsl:param name="valor" as="xs:decimal" />
-		<axsl:value-of select="round($valor, 2)" />
+		<axsl:param name="valor" as="xs:decimal" />
+			<axsl:value-of select="round($valor, 2)" />
 	</axsl:function>	
-	
-	<axsl:function name="f:margen" as="xsd:boolean">
-	<axsl:param name="valor" as="xs:decimal" />
-	<axsl:param name="referencia" as="xs:decimal" />
-	<axsl:param name="tolerancia" as="xs:decimal" />
-		<axsl:variable name="v" select="if ($valor) then $valor else 0" />
-		<axsl:variable name="r" select="if ($referencia) then $referencia else 0" />
-		<axsl:value-of select="abs($v - $r) le $tolerancia" />
+
+	<xsl:text>&#10;</xsl:text>
+
+	<axsl:function name="f:enMargen" as="xsd:boolean">
+		<axsl:param name="valor" as="xs:decimal" />
+		<axsl:param name="referencia" as="xs:decimal" />
+		<axsl:param name="tolerancia" as="xs:decimal" />
+			<axsl:variable name="v" select="if ($valor) then $valor else 0" />
+			<axsl:variable name="r" select="if ($referencia) then $referencia else 0" />
+			<axsl:value-of select="abs($v - $r) le $tolerancia" />
 	</axsl:function>	
 
   <xsl:text>&#10;</xsl:text>
