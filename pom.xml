@@ -24,9 +24,9 @@
     <artifactId>parent-pom</artifactId>
     <version>3.0.5</version>
   </parent>
-  <groupId>com.helger.schematron</groupId>
+  <groupId>io.github.spfe</groupId>
   <artifactId>ph-schematron-parent-pom</artifactId>
-  <version>9.2.1-SNAPSHOT</version>
+  <version>9.2.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>ph-schematron-parent-pom</name>
   <description>Base POM to build the ph-schematron projects</description>

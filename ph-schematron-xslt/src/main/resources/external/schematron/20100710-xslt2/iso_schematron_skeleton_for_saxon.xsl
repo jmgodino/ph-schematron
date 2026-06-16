@@ -440,6 +440,7 @@ THE SOFTWARE.
     xmlns:xhtml="http://www.w3.org/1999/xhtml" 
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     extension-element-prefixes="exsl"
+	xmlns:f="#functions"
     version="2.0"
 	 >
 <!-- This program implements ISO Schematron, except for abstract patterns 
@@ -660,7 +661,20 @@ which require a preprocess.
 	<xsl:call-template name="process-prolog"/> 
   <xsl:text>&#10;&#10;</xsl:text><xsl:comment>XSD TYPES FOR XSLT2</xsl:comment><xsl:text>&#10;</xsl:text>
 	<xsl:apply-templates mode="do-types"   select="xsl:import-schema"/>
-  <xsl:text>&#10;&#10;</xsl:text><xsl:comment>KEYS AND FUNCTIONS</xsl:comment><xsl:text>&#10;</xsl:text>
+  <xsl:text>&#10;&#10;</xsl:text>
+	<axsl:function name="f:get-valor-num" as="xsd:decimal">
+	<axsl:param name="elemento" as="node()*" />
+	<axsl:param name="defecto" as="xs:decimal" />
+	<axsl:choose>
+		<axsl:when test="$elemento">
+		<axsl:value-of select="$elemento" />
+		</axsl:when>
+		<axsl:otherwise>
+		<axsl:value-of select="$defecto" />
+		</axsl:otherwise>
+	</axsl:choose>
+	</axsl:function>
+  <xsl:text>&#10;</xsl:text>
 	<xsl:apply-templates mode="do-keys"   select="xsl:key | xsl:function "/>
   <xsl:text>&#10;&#10;</xsl:text><xsl:comment>DEFAULT RULES</xsl:comment><xsl:text>&#10;</xsl:text>
   <xsl:call-template name="generate-default-rules" />
