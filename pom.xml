@@ -26,7 +26,7 @@
   </parent>
   <groupId>io.github.spfe</groupId>
   <artifactId>ph-schematron-parent-pom</artifactId>
-  <version>9.2.2-SNAPSHOT</version>
+  <version>9.2.2</version>
   <packaging>pom</packaging>
   <name>ph-schematron-parent-pom</name>
   <description>Base POM to build the ph-schematron projects</description>
@@ -109,37 +109,37 @@
       </dependency>
       
       <dependency>
-        <groupId>com.helger.schematron</groupId>
+        <groupId>io.github.spfe</groupId>
         <artifactId>ph-schematron-testfiles</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.helger.schematron</groupId>
+        <groupId>io.github.spfe</groupId>
         <artifactId>ph-schematron-api</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.helger.schematron</groupId>
+        <groupId>io.github.spfe</groupId>
         <artifactId>ph-schematron-xslt</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.helger.schematron</groupId>
+        <groupId>io.github.spfe</groupId>
         <artifactId>ph-schematron-schxslt</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.helger.schematron</groupId>
+        <groupId>io.github.spfe</groupId>
         <artifactId>ph-schematron-schxslt2</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.helger.schematron</groupId>
+        <groupId>io.github.spfe</groupId>
         <artifactId>ph-schematron-pure</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
-        <groupId>com.helger.schematron</groupId>
+        <groupId>io.github.spfe</groupId>
         <artifactId>ph-schematron-validator</artifactId>
         <version>${project.version}</version>
       </dependency>

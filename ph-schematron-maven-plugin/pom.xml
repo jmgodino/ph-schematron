@@ -22,9 +22,9 @@
   <parent>
     <groupId>io.github.spfe</groupId>
     <artifactId>ph-schematron-parent-pom</artifactId>
-    <version>9.2.2-SNAPSHOT</version>
+    <version>9.2.2</version>
   </parent>
-  <groupId>com.helger.maven</groupId>
+  <groupId>io.github.spfe</groupId>
   <artifactId>ph-schematron-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
   <name>ph-schematron-maven-plugin</name>
@@ -86,19 +86,19 @@
     </dependency>
     
     <dependency>
-      <groupId>com.helger.schematron</groupId>
+      <groupId>io.github.spfe</groupId>
       <artifactId>ph-schematron-xslt</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.helger.schematron</groupId>
+      <groupId>io.github.spfe</groupId>
       <artifactId>ph-schematron-schxslt</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.helger.schematron</groupId>
+      <groupId>io.github.spfe</groupId>
       <artifactId>ph-schematron-schxslt2</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.helger.schematron</groupId>
+      <groupId>io.github.spfe</groupId>
       <artifactId>ph-schematron-pure</artifactId>
     </dependency>
     <dependency>

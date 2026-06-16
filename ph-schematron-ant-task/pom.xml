@@ -22,7 +22,7 @@
   <parent>
     <groupId>io.github.spfe</groupId>
     <artifactId>ph-schematron-parent-pom</artifactId>
-    <version>9.2.2-SNAPSHOT</version>
+    <version>9.2.2</version>
   </parent>
   <artifactId>ph-schematron-ant-task</artifactId>
   <packaging>jar</packaging>
@@ -75,15 +75,15 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.helger.schematron</groupId>
+      <groupId>io.github.spfe</groupId>
       <artifactId>ph-schematron-xslt</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.helger.schematron</groupId>
+      <groupId>io.github.spfe</groupId>
       <artifactId>ph-schematron-schxslt</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.helger.schematron</groupId>
+      <groupId>io.github.spfe</groupId>
       <artifactId>ph-schematron-pure</artifactId>
     </dependency>
     

@@ -22,7 +22,7 @@
   <parent>
     <groupId>io.github.spfe</groupId>
     <artifactId>ph-schematron-parent-pom</artifactId>
-    <version>9.2.2-SNAPSHOT</version>
+    <version>9.2.2</version>
   </parent>
   <artifactId>ph-schematron-api</artifactId>
   <packaging>jar</packaging>
