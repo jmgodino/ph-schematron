@@ -674,6 +674,21 @@ which require a preprocess.
 		</axsl:otherwise>
 	</axsl:choose>
 	</axsl:function>
+	
+	<axsl:function name="f:redondeaImporte" as="xsd:decimal">
+	<axsl:param name="valor" as="xs:decimal" />
+		<axsl:value-of select="round($valor, 2)" />
+	</axsl:function>	
+	
+	<axsl:function name="f:margen" as="xsd:boolean">
+	<axsl:param name="valor" as="xs:decimal" />
+	<axsl:param name="referencia" as="xs:decimal" />
+	<axsl:param name="tolerancia" as="xs:decimal" />
+		<axsl:variable name="v" select="if ($valor) then $valor else 0">
+		<axsl:variable name="r" select="if ($referencia) then $referencia else 0">
+		<axsl:value-of select="abs($v - $r) le $tolerancia" />
+	</axsl:function>	
+
   <xsl:text>&#10;</xsl:text>
 	<xsl:apply-templates mode="do-keys"   select="xsl:key | xsl:function "/>
   <xsl:text>&#10;&#10;</xsl:text><xsl:comment>DEFAULT RULES</xsl:comment><xsl:text>&#10;</xsl:text>
